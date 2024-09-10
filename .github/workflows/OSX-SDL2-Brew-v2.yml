@@ -23,10 +23,10 @@ jobs:
         make -f Makefile.2
     - name: Create tarball
       run: |
-          tar -cvf fixGB.tgz fixGB
+          tar -cvf fixNES.tgz fixNES
     - name: Upload
       uses: actions/upload-artifact@v4
       with:
         name: Artifact
         path: |
-          ./fixGB.tgz
+          ./fixNES.tgz
