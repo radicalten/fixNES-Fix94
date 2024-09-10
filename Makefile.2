@@ -1,17 +1,11 @@
-TARGET := fixGB
+TARGET := fixNES
 DEBUG   = 0
 AUDIO_FLOAT = 1
 
-OBJECTS :=
-OBJECTS +=alhelpers.o
-OBJECTS +=apu.o
-OBJECTS +=audio.o
-OBJECTS +=cpu.o
-OBJECTS +=input.o
-OBJECTS +=main.o
-OBJECTS +=mbc.o
-OBJECTS +=mem.o
-OBJECTS +=ppu.o
+SRCS    += $(wildcard *.c)
+SRCS    += $(wildcard mapper/*.c)
+SRCS    += $(wildcard unzip/*.c)
+OBJS    := $(patsubst %.c,%.o,$(SRCS))
 
 FLAGS    += -Wall -Wextra -ffast-math
 FLAGS    += -Werror=implicit-function-declaration
@@ -34,14 +28,14 @@ CFLAGS += $(FLAGS) $(DEFINES) $(INCLUDES)
 LDFLAGS += $(CFLAGS) -lm -I/opt/homebrew/include/SDL2  -I/opt/homebrew/include/freeglut -I/opt/homebrew/opt/openal-soft/include -L/opt/homebrew/opt/openal-soft/lib -L/opt/homebrew/lib -Wl,-rpath,/opt/homebrew/lib -lSDL2 -lglut -lGL -lopenal
 
 all: $(TARGET)
-$(TARGET): $(OBJECTS)
+$(TARGET): $(OBJS)
 	$(CC) $^ -o $@ $(LDFLAGS)
 
 %.o: %.c
 	$(CC) -c $< -o $@ $(CFLAGS)
 
 clean:
-	rm -f $(TARGET) $(OBJECTS)
+	rm -f $(TARGET) $(OBJS)
 
 
 .PHONY: clean test
