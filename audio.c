@@ -4,9 +4,9 @@
 #include <string.h>
 #include <stdlib.h>
 #include <math.h>
-#include "AL/al.h"
-#include "AL/alc.h"
-#include "AL/alext.h"
+#include "al.h"
+#include "alc.h"
+#include "alext.h"
 #include "alhelpers.h"
 #include "apu.h"
 #if WINDOWS_BUILD
