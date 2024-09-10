@@ -1,0 +1,32 @@
+name: OSX-SDL2-Brew-2
+on:
+  push:
+    branches:
+    - master
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: OpenAL Soft
+      run: |
+        git clone https://github.com/radicalten/openal-soft-kcat.git
+    - name: Set up Homebrew
+      id: set-up-homebrew
+      uses: Homebrew/actions/setup-homebrew@master
+    - name: Install FreeGLUT Prerequisites 
+      run: |
+        brew install cmake libx11 libxi libxrandr libxxf86vm pkg-config mesa sdl2 freeglut openal-soft
+    - name: Compile
+      run: |
+        make -f Makefile.2
+    - name: Create tarball
+      run: |
+          tar -cvf fixGB.tgz fixGB
+    - name: Upload
+      uses: actions/upload-artifact@v4
+      with:
+        name: Artifact
+        path: |
+          ./fixGB.tgz
