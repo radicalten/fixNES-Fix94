@@ -12,8 +12,8 @@
 #include <inttypes.h>
 #include <ctype.h>
 #ifndef __LIBRETRO__
-#include <GL/glut.h>
-#include <GL/glext.h>
+#include "freeglut.h"
+#include "freeglut_ext.h"
 #endif
 #include <time.h>
 #include <math.h>
