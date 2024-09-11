@@ -18,13 +18,13 @@
 
 static struct {
 	uint8_t *prgROM;
+	uint8_t *prgROMBank0Ptr, *prgROMBank1Ptr, *prgROMBank2Ptr;
 	uint32_t prgROMsize;
 	uint32_t prgROMand;
-	bool usesPrgRAM;
-	uint8_t *prgROMBank0Ptr, *prgROMBank1Ptr, *prgROMBank2Ptr;
 	uint32_t curPRGBank0, curPRGBank1, lastPRGBank;
 	uint32_t CHRBank[8];
 	uint8_t CHRMode;
+	bool usesPrgRAM;
 } vrc6;
 
 static void vrc6SetPrgROMBankPtr0() { vrc6.prgROMBank0Ptr = vrc6.prgROM+vrc6.curPRGBank0; }
