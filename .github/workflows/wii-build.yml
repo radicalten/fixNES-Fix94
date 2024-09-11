@@ -13,7 +13,7 @@ jobs:
     - name: Compile
       run: |
         cd libretro
-        make -f Makefile
+        make -f Makefile.wii
     - name: Upload
       uses: actions/upload-artifact@v4
       with:
