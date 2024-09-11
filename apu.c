@@ -66,6 +66,12 @@ static struct {
 	int16_t *DelayBuf;
 	#endif
 	#endif
+	const uint8_t *p1seq;
+	const uint8_t *p2seq;
+	const uint8_t *lengthLookupTbl;
+	const uint8_t *triSeq;
+	const uint16_t *dmcPeriod, *noisePeriod;
+	const uint16_t *mode4Ctr, *mode5Ctr;
 	uint32_t BufSize;
 	uint32_t BufSizeBytes;
 	uint32_t curBufPos;
@@ -80,8 +86,6 @@ static struct {
 	uint16_t dmcCurAddr, dmcCurLen;
 	uint16_t modeCurCtr;
 	uint16_t p1freqCtr, p2freqCtr, triFreqCtr, noiseFreqCtr, dmcFreqCtr;
-	const uint16_t *dmcPeriod, *noisePeriod;
-	const uint16_t *mode4Ctr, *mode5Ctr;
 	uint8_t reg[0x18];
 	uint8_t p1LengthCtr, p2LengthCtr, noiseLengthCtr;
 	uint8_t triLengthCtr, triLinearCtr, triCurLinearCtr;
@@ -95,10 +99,6 @@ static struct {
 	uint8_t p2Out;
 	uint8_t triOut;
 	uint8_t noiseOut;
-	const uint8_t *p1seq;
-	const uint8_t *p2seq;
-	const uint8_t *lengthLookupTbl;
-	const uint8_t *triSeq;
 	uint8_t modePos;
 	uint8_t p1Cycle, p2Cycle, triCycle;
 	bool mode5;
