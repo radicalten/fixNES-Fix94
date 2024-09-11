@@ -21,12 +21,12 @@ static struct {
 			*chrROMBank2Ptr, *chrROMBank3Ptr,
 			*chrROMBank4Ptr, *chrROMBank5Ptr;
 	uint32_t chrROMand;
+	uint16_t prevAddr;
 	uint8_t chrRAM[0x2000];
 	uint8_t irqCtr;
 	uint8_t irqStart;
-	bool irqEnable;
 	uint8_t irqReloadVal;
-	uint16_t prevAddr;
+	bool irqEnable;
 } m48;
 
 void m48init(uint8_t *prgROMin, uint32_t prgROMsizeIn, 
