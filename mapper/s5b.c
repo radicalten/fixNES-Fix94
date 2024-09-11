@@ -19,10 +19,10 @@
 static struct {
 	uint8_t *prgROM;
 	uint8_t *prgRAM;
+	uint8_t *prgRAMBankPtr;
 	uint32_t prgROMand;
 	uint32_t prgRAMand;
 	uint32_t prgRAMBank;
-	uint8_t *prgRAMBankPtr;
 	uint16_t irqCtr;
 	uint8_t CurReg;
 	bool lowRAM;
