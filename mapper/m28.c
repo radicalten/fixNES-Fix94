@@ -15,12 +15,12 @@
 #include "../mapper_h/common.h"
 
 static struct {
-	uint8_t chrRAM[0x8000];
-	uint8_t *chrRAMBankPtr;
-	uint8_t prgBankMode;
-	uint16_t prgBankAnd;
-	uint8_t prgBankInner;
+	uint8_t *chrRAMBankPtr;	
+	uint16_t prgBankAnd;	
 	uint16_t prgBankOuter;
+	uint8_t chrRAM[0x8000];
+	uint8_t prgBankMode;
+	uint8_t prgBankInner;
 	uint8_t reg;
 	uint8_t mirror;
 	bool usesPrgRAM;
