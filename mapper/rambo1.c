@@ -17,29 +17,29 @@
 
 static struct {
 	uint8_t *chrROM;
+	uint8_t *chrROMBank0Ptr, *chrROMBank1Ptr,
+			*chrROMBank2Ptr, *chrROMBank3Ptr,
+			*chrROMBank4Ptr, *chrROMBank5Ptr,
+			*chrROMBank6Ptr, *chrROMBank7Ptr;
 	uint32_t chrROMand;
-	uint8_t chrRAM[0x2000];
 	uint32_t curPRGBank0;
 	uint32_t curPRGBank1;
 	uint32_t curPRGBank2;
 	uint32_t lastPRGBank;
 	uint32_t CHRBank[8];
-	uint8_t *chrROMBank0Ptr, *chrROMBank1Ptr,
-			*chrROMBank2Ptr, *chrROMBank3Ptr,
-			*chrROMBank4Ptr, *chrROMBank5Ptr,
-			*chrROMBank6Ptr, *chrROMBank7Ptr;
+	uint16_t prevAddr;
+	uint8_t chrRAM[0x2000];
 	uint8_t writeAddr;
 	uint8_t chr_bank_flip;
-	bool chr_mode_full;
-	bool prg_bank_flip;
 	uint8_t irqCtr;
 	uint8_t irqDelay;
 	uint8_t irqPrescaler;
+	bool chr_mode_full;
+	bool prg_bank_flip;
 	bool irqReqReset;
 	bool irqEnable;
 	bool irqCyclemode;
 	uint8_t irqReloadVal;
-	uint16_t prevAddr;
 } rambo1;
 
 void rambo1SetPrgROMBankPtr()
