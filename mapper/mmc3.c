@@ -16,31 +16,31 @@
 #include "../mapper_h/common.h"
 
 static struct {
-	bool usesPrgRAM;
+	uint8_t *chrROMBank0Ptr, *chrROMBank1Ptr,
+			*chrROMBank2Ptr, *chrROMBank3Ptr,
+			*chrROMBank4Ptr, *chrROMBank5Ptr,
+			*chrROMBank6Ptr, *chrROMBank7Ptr;
 	uint8_t *chrROM;
 	uint32_t chrROMaddFull;
 	uint32_t chrROMadd0XXX;
 	uint32_t chrROMadd1XXX;
 	uint32_t chrROMandFull;
-	uint8_t chrRAM[0x2000];
 	uint32_t curPRGBank0;
 	uint32_t curPRGBank1;
 	uint32_t lastM1PRGBank;
 	uint32_t lastPRGBank;
 	uint32_t CHRBank[8];
-	uint8_t *chrROMBank0Ptr, *chrROMBank1Ptr,
-			*chrROMBank2Ptr, *chrROMBank3Ptr,
-			*chrROMBank4Ptr, *chrROMBank5Ptr,
-			*chrROMBank6Ptr, *chrROMBank7Ptr;
+	uint16_t prevAddr;
+	uint8_t chrRAM[0x2000];
 	uint8_t writeAddr;
 	uint8_t chr_bank_flip;
-	bool prg_bank_flip;
+	uint8_t irqReloadVal;
 	uint8_t irqCtr;
+	bool prg_bank_flip;
 	bool irqEnable;
 	bool altirq;
 	bool clear;
-	uint8_t irqReloadVal;
-	uint16_t prevAddr;
+	bool usesPrgRAM;
 } mmc3;
 //used externally
 uint32_t mmc3_prgROMadd;
