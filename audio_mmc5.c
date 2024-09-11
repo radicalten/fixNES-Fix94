@@ -33,17 +33,15 @@ bool mmc5_dmcreadmode;
 #define DMC_IRQ_ENABLE (1<<7)
 
 static struct {
-	uint8_t reg[0x18];
-	envelope_t p1Env, p2Env;
-
 	const uint16_t *mode4Ctr;
-	const uint8_t *p1seq, *p2seq;
-
+	const uint8_t *p1seq, *p2seq;	
+	envelope_t p1Env, p2Env;	
+	uint16_t modeCurCtr;
+	uint16_t p1freqCtr, p2freqCtr;	
 	uint16_t freq1, freq2;
+	uint8_t reg[0x18];
 	uint8_t p1LengthCtr, p2LengthCtr;
 	uint8_t modePos;
-	uint16_t modeCurCtr;
-	uint16_t p1freqCtr, p2freqCtr;
 	uint8_t p1Cycle, p2Cycle;
 	bool p1haltloop, p2haltloop;
 	bool dmcirqenable;
