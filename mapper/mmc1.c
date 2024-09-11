@@ -15,7 +15,6 @@
 #include "../mapper_h/common.h"
 
 static struct {
-	bool usesPrgRAM;
 	uint8_t *chrROM;
 	uint8_t *chrROMBank0Ptr;
 	uint8_t *chrROMBank1Ptr;
@@ -30,6 +29,7 @@ static struct {
 	bool single_prg_bank;
 	bool last_bank_fixed;
 	bool single_chr_bank;
+	bool usesPrgRAM;
 } mmc1;
 
 static void mmc1SetPrgROMBankPtr()
