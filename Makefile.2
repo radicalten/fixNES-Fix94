@@ -25,7 +25,7 @@ endif
 
 CFLAGS += $(FLAGS) $(DEFINES) $(INCLUDES)
 
-LDFLAGS += $(CFLAGS) -lm -I/opt/homebrew/include/SDL2  -I/opt/homebrew/include/freeglut -I/opt/homebrew/opt/openal-soft/include -L/opt/homebrew/opt/openal-soft/lib -L/opt/homebrew/lib -Wl,-rpath,/opt/homebrew/lib -lSDL2 -lglut -lGL -lopenal
+LDFLAGS += $(CFLAGS) -lm -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/include/SDL2  -I/opt/homebrew/include/freeglut -I/opt/homebrew/opt/openal-soft/include -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openal-soft/lib -L/opt/homebrew/lib -Wl,-rpath,/opt/homebrew/lib -lSDL2 -lglut -lGL -lopenal -lzlib
 
 all: $(TARGET)
 $(TARGET): $(OBJS)
