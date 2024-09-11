@@ -1,4 +1,4 @@
-name: OSX-SDL2-Brew-2
+name: OSX-SDL2-Brew-fast
 on:
   push:
     branches:
