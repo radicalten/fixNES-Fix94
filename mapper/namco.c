@@ -29,20 +29,20 @@ static struct {
 	uint8_t *prgRAM;
 	uint8_t *chrROM;
 	uint8_t *chrBankPtr[8];
-	uint8_t chrBankPtrType[8];
+	uint8_t *VRAMBankPtr[4];
 	uint32_t prgRAMsize;
 	uint32_t chrROMsize;
 	uint32_t CHRBank[8];
+	uint32_t chrROMand;
+	uint16_t irqCtr;
+	uint8_t type;
 	uint8_t VRAM[0x800];
-	uint8_t *VRAMBankPtr[4];
+	uint8_t chrBankPtrType[8];
 	uint8_t VRAMBankPtrType[4];
+	uint8_t NTAddr[4];
 	bool CHRAddr0XXXIsNT;
 	bool CHRAddr1XXXIsNT;
-	uint8_t NTAddr[4];
-	uint16_t irqCtr;
 	bool irqEnable;
-	uint8_t type;
-	uint32_t chrROMand;
 } namco;
 
 static void namco_SetChrROMBankPtr()
