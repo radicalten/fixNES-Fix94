@@ -114,8 +114,10 @@ static struct
 {
 	const uint8_t *Pal;
 	const uint8_t *OddArr;
+	uint8_t *VRAMBank0Ptr, *VRAMBank1Ptr,
+			*VRAMBank2Ptr, *VRAMBank3Ptr;
 	spriteEvalBFunc spriteEvalB;
-	uint8_t SprLUT[0x100];
+	
 #ifdef COL_32BIT
 	uint32_t BGRLUT[0x200];
 #ifdef DISPLAY_PPUWRITES
@@ -127,19 +129,8 @@ static struct
 	uint16_t highlightcolor;
 #endif
 #endif //end COL_32BIT
-	uint8_t TILELUT[0x400][4];
 	uint16_t PALRAM2[0x20];
 	uint16_t NameTbl[4];
-	uint8_t VRAM[0x1000];
-	uint8_t *VRAMBank0Ptr, *VRAMBank1Ptr,
-			*VRAMBank2Ptr, *VRAMBank3Ptr;
-	uint8_t OAM[0x100];
-	uint8_t OAM2[0x20];
-	uint8_t *OAM2Ptr;
-	uint8_t PALRAM[0x20];
-	uint8_t BGTiles[16];
-	uint8_t Reg[8];
-	uint8_t OddNum;
 	uint16_t RunCycles;
 	uint16_t curLine;
 	uint16_t LinesTotal;
@@ -149,6 +140,16 @@ static struct
 	uint16_t TmpVramAddr;
 	uint16_t NextAddr;
 	uint16_t NextTile;
+	uint8_t SprLUT[0x100];
+	uint8_t TILELUT[0x400][4];
+	uint8_t VRAM[0x1000];
+	uint8_t OAM[0x100];
+	uint8_t OAM2[0x20];
+	uint8_t *OAM2Ptr;
+	uint8_t PALRAM[0x20];
+	uint8_t BGTiles[16];
+	uint8_t Reg[8];
+	uint8_t OddNum;
 	uint8_t NextByte;
 	uint8_t VramReadBuf;
 	uint8_t OAMpos;
