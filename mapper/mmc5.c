@@ -24,33 +24,24 @@ static struct {
 	uint8_t *chrROMPtrUpper[8];
 	uint8_t *prgBank0Ptr, *prgBank1Ptr,
 			*prgBank2Ptr, *prgBank3Ptr;
-	uint8_t prgBank0PtrType, prgBank1PtrType,
-			prgBank2PtrType;
 	uint32_t prgROMsize;
 	uint32_t prgRAMsize;
 	uint32_t chrROMsize;
+	uint32_t prgROMand;
+	uint32_t prgRAMand;
+	uint32_t chrROMand;
+	uint32_t PRGRAMBank6XXXadd;
+	uint32_t PRGRAMBank6XXX;
+	uint32_t PRGBank[4];
+	uint32_t prgRAMadd[4];
+	uint32_t CHRBank[12];
+	uint32_t upperCHRBank;
+	uint16_t mulRes;
 	uint8_t chrRAM[0x2000];
 	uint8_t VRAM[0x800];
 	uint8_t exRAM[0x400];
-	uint32_t PRGRAMBank6XXX;
-	uint32_t PRGBank[4];
 	uint8_t PRGBankType[3];
-	uint32_t CHRBank[12];
-	uint32_t upperCHRBank;
 	uint8_t vramBankMode[4];
-	uint8_t prg_bank_mode;
-	uint8_t chr_bank_mode;
-	uint8_t irqCtr;
-	uint8_t irqVal;
-	uint8_t fillTile;
-	uint8_t fillAttr;
-	bool irqEnable;
-	bool irqPending;
-	bool chrSet;
-	bool split;
-	bool splitAllow;
-	bool splitInitEnable;
-	bool splitEnable;
 	uint8_t splitTile;
 	uint8_t splitBank;
 	uint8_t DrawnXTile;
@@ -58,12 +49,21 @@ static struct {
 	uint8_t mode1Bank;
 	uint8_t mode1Attrib;
 	uint8_t mulA, mulB;
-	uint16_t mulRes;
-	uint32_t prgROMand;
-	uint32_t prgRAMand;
-	uint32_t chrROMand;
-	uint32_t PRGRAMBank6XXXadd;
-	uint32_t prgRAMadd[4];
+	uint8_t prg_bank_mode;
+	uint8_t chr_bank_mode;
+	uint8_t irqCtr;
+	uint8_t irqVal;
+	uint8_t fillTile;
+	uint8_t fillAttr;
+	uint8_t prgBank0PtrType, prgBank1PtrType,
+			prgBank2PtrType;
+	bool irqEnable;
+	bool irqPending;
+	bool chrSet;
+	bool split;
+	bool splitAllow;
+	bool splitInitEnable;
+	bool splitEnable;
 } mmc5;
 
 static void mmc5SetChrBankPtrLower()
