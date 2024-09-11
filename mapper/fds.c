@@ -26,6 +26,13 @@ static struct {
 	uint32_t BIOSsize;
 	uint32_t FileLoc;
 	uint32_t prgRAMsize;
+	uint32_t disk_ready_timer;
+	uint16_t irq_timer;
+	uint16_t cur_irq_timer;
+	uint16_t transfer_timer;
+	uint16_t disk_position;
+	uint8_t transfer_val;
+	uint8_t switch_delay;
 	bool irq_enable;
 	bool transfer_irq_enable;
 	bool disk_ready;
@@ -37,13 +44,6 @@ static struct {
 	bool crc_check;
 	bool disk_start;
 	bool disk_active;
-	uint8_t transfer_val;
-	uint8_t switch_delay;
-	uint16_t irq_timer;
-	uint16_t cur_irq_timer;
-	uint16_t transfer_timer;
-	uint16_t disk_position;
-	uint32_t disk_ready_timer;
 } fds;
 
 extern uint8_t interrupt;
