@@ -20,18 +20,18 @@
 //implementation of the major code based on info from http://forums.nesdev.com/viewtopic.php?f=3&t=18000
 
 static struct {
-	bool usesPrgRAM;
+	uint8_t *VRAMBankPtr[4];	
+	uint8_t *CHRBankPtr[2];
+	uint8_t reg[4];	
+	uint8_t VRAM[0x800];
+	uint8_t NTBit;
 	uint8_t prgBank;
 	uint8_t prgBit;
 	uint8_t prgMode;
-	uint8_t VRAM[0x800];
-	uint8_t *VRAMBankPtr[4];
 	uint8_t chrRAM[0x2000];
-	uint8_t *CHRBankPtr[2];
+	bool usesPrgRAM;
 	bool chrUseNTBit;
 	bool sprUseUpper;
-	uint8_t NTBit;
-	uint8_t reg[4];
 } m162;
 
 static struct {
