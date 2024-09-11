@@ -30,31 +30,26 @@ uint16_t s5BOut;
 
 static struct {
 	const bool *envRepeatTbl;
+	uint32_t envFreq;
+	uint32_t envFreqCtr;
+	uint32_t noiseReg;
 	uint16_t volTbl[32];
 	//16 shapes, 2x32 steps
-	uint8_t envShapeTbl[16][64];
-
-	uint8_t curReg;
-
+	uint16_t envVol;
 	uint16_t freq[3];
 	uint16_t freqCtr[3];
 	uint16_t vol[3];
+	uint8_t envShapeTbl[16][64];
+	uint16_t noiseFreq;
+	uint16_t noiseFreqCtr;
+	uint8_t curReg;
+	uint8_t ctr;
+	uint8_t envStep;
+	uint8_t envShape;
 	uint8_t cycle[3];
 	bool disable[3];
 	bool nonoise[3];
 	bool env[3];
-
-	uint8_t ctr;
-
-	uint16_t noiseFreq;
-	uint16_t noiseFreqCtr;
-	uint32_t noiseReg;
-
-	uint32_t envFreq;
-	uint32_t envFreqCtr;
-	uint8_t envStep;
-	uint8_t envShape;
-	uint16_t envVol;
 	bool envRepeat;
 } s5b_apu;
 
