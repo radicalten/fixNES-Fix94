@@ -16,12 +16,12 @@
 #include "../mapper_h/common.h"
 
 static struct {
-	bool usesPrgRAM;
 	uint32_t curPRGBank0;
 	uint32_t curPRGBank1;
 	uint32_t lastM1PRGBank;
 	uint32_t lastPRGBank;
 	uint32_t CHRBank[8];
+	bool usesPrgRAM;
 	bool prg_bank_flip;
 } vrc2_4;
 
