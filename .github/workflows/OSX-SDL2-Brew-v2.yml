@@ -17,7 +17,7 @@ jobs:
       uses: Homebrew/actions/setup-homebrew@master
     - name: Install FreeGLUT Prerequisites 
       run: |
-        brew install cmake libx11 libxi libxrandr libxxf86vm pkg-config mesa sdl2 freeglut openal-soft
+        brew install cmake libx11 libxi libxrandr libxxf86vm pkg-config mesa sdl2 freeglut openal-soft zlib
     - name: Compile
       run: |
         make -f Makefile.2
