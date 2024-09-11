@@ -24,7 +24,7 @@
 #include "audio.h"
 #include "audio_fds.h"
 #include "audio_vrc7.h"
-#include "mapper_h/nsf.h"
+#include "nsf.h"
 #include "libretro.h"
 
 static retro_log_printf_t log_cb;
