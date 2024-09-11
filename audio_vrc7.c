@@ -73,12 +73,12 @@ typedef struct _vrc7slot_t {
 typedef struct _vrc7chan_t {
 	vrc7slot_t mod;
 	vrc7slot_t carry;
-	bool enabled;
-	bool s;
 	uint16_t freq;
 	uint8_t block;
 	uint8_t instrument;
 	uint8_t v;
+	bool enabled;
+	bool s;
 } vrc7chan_t;
 
 typedef struct _vrc7Ksr_t
@@ -108,22 +108,20 @@ static inline int32_t vrc7FromDb(double in)
 // LUTs and a lot of code based on this code from Disch:
 // http://codepad.org/aAQjWXwJ
 static struct {
-	uint8_t instrument[16][8];
+	const uint8_t *multi;	
+	vrc7chan_t channel[6];
+	vrc7Ksr_t ksr;
+	double fmLut[256];	
+	double fmOut;
 	uint32_t attackLut[256];
 	uint32_t amLut[256];
-	double fmLut[256];
+	uint8_t instrument[16][8];
 	uint32_t sinLut[1024];
 	int32_t linearLut[65536];
 	int32_t kslLut[0x10];
-	const uint8_t *multi;
-
-	vrc7chan_t channel[6];
-	vrc7Ksr_t ksr;
-
 	uint32_t amPhase;
 	uint32_t amOut;
 	uint32_t fmPhase;
-	double fmOut;
 	uint8_t reg;
 } vrc7_apu;
 
