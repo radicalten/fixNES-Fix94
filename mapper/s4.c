@@ -17,12 +17,12 @@
 static struct {
 	uint8_t *prgRAM;
 	uint8_t *chrROM;
-	uint32_t chrROMand;
 	uint8_t *CHRNT0Ptr, *CHRNT1Ptr;
-	uint8_t VRAM[0x800];
 	uint8_t *VRAMNT0Ptr, *VRAMNT1Ptr;
 	uint8_t *VRAMBank0Ptr, *VRAMBank1Ptr,
 					*VRAMBank2Ptr, *VRAMBank3Ptr;
+	uint32_t chrROMand;
+	uint8_t VRAM[0x800];
 	uint8_t VRAMBank[4];
 	bool enableRAM;
 	bool chrVRAM;
