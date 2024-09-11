@@ -15,10 +15,10 @@
 #include "../mapper_h/common.h"
 
 static struct {
-	bool usesPrgRAM;
 	uint32_t curPRGBank;
-	uint32_t upperPRGBank;
+	uint32_t upperPRGBank;	
 	uint8_t bankMode;
+	bool usesPrgRAM;
 } m15;
 
 static void m15SetPrgROMBankPtr()
