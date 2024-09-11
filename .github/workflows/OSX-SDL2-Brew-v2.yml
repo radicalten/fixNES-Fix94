@@ -2,7 +2,7 @@ name: OSX-SDL2-Brew-fast
 on:
   push:
     branches:
-    - fast
+    - fast2
 jobs:
   build:
     runs-on: macos-latest
