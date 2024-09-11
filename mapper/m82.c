@@ -15,11 +15,11 @@
 #include "../mapper_h/common.h"
 
 static struct {
-	bool usesPrgRAM;
-	bool prgRAMenabled[3];
 	uint8_t *prgRAM;
 	uint32_t CHRBank[8];
 	uint8_t chr_bank_flip;
+	bool usesPrgRAM;
+	bool prgRAMenabled[3];
 } m82;
 
 static void m82SetChrROMBanks()
