@@ -14,10 +14,10 @@
 
 static struct {
 	uint8_t *prgROM;
+	uint8_t *chrRAMBankPtr;
 	uint32_t prgROMsize;
 	uint32_t curCHRBank;
 	uint8_t chrRAM[0x4000];
-	uint8_t *chrRAMBankPtr;
 } m13;
 
 static void m13setChrRAMBankPtr()
