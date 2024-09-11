@@ -37,6 +37,8 @@ bool cpuWriteTMP;
 
 static struct {
 	const uint8_t *action_arr;
+	uint16_t oam_dma_addr;
+	uint16_t dmc_dma_addr;
 	uint16_t pc, pc_nsf_bak, absAddr, indVal;
 	uint8_t p,p_nsf_bak,a,x,y,s,tmp;
 	uint8_t p_irq_req;
@@ -45,6 +47,8 @@ static struct {
 	uint8_t irq;
 	uint8_t irqMask;
 	uint8_t dma;
+	uint8_t oam_dma_ptr;
+	uint8_t oam_dma_val;
 	bool boot;
 	bool reset;
 	bool needsIndFix;
@@ -56,10 +60,6 @@ static struct {
 	bool oam_halted;
 	bool dmc_halt_attempt;
 	bool oam_dma_pause;
-	uint16_t oam_dma_addr;
-	uint16_t dmc_dma_addr;
-	uint8_t oam_dma_ptr;
-	uint8_t oam_dma_val;
 } cpu;
 
 static void cpuSetStartArray();
