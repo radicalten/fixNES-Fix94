@@ -16,11 +16,11 @@
 
 static struct {
 	uint8_t *prgROM;
-	uint32_t prgROMand;
 	uint8_t *prgROMBank0Ptr, *prgROMBank1Ptr,
 			*prgROMBank2Ptr, *prgROMBank3Ptr,
 			*prgROMBank4Ptr, *prgROMBank5Ptr,
 			*prgROMBank6Ptr, *prgROMBank7Ptr;
+	uint32_t prgROMand;
 } prg4;
 
 void prg4init(uint8_t *prgROM, uint32_t prgROMsize)
