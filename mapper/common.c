@@ -68,9 +68,9 @@ void prg4setBank7(uint32_t val) { prg4.prgROMBank7Ptr = prg4.prgROM+(val&prg4.pr
 
 static struct {
 	uint8_t *prgROM;
-	uint32_t prgROMand;
 	uint8_t *prgROMBank0Ptr, *prgROMBank1Ptr,
 			*prgROMBank2Ptr, *prgROMBank3Ptr;
+	uint32_t prgROMand;
 } prg8;
 
 void prg8init(uint8_t *prgROM, uint32_t prgROMsize)
@@ -287,11 +287,11 @@ void chr1setBank7(uint32_t val) { chr1.chrROMBank7Ptr = chr1.chrROM+(val&chr1.ch
 
 static struct {
 	uint8_t *chrROM;
-	uint32_t chrROMand;
 	uint8_t *chrROMBank0Ptr;
 	uint8_t *chrROMBank1Ptr;
 	uint8_t *chrROMBank2Ptr;
 	uint8_t *chrROMBank3Ptr;
+	uint32_t chrROMand;
 } chr2;
 
 void chr2init(uint8_t *chrROM, uint32_t chrROMsize)
