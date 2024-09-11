@@ -12,7 +12,6 @@ jobs:
       uses: actions/checkout@v4
     - name: Compile
       run: |
-        cd libretro
         make -f Makefile.wii
     - name: Upload
       uses: actions/upload-artifact@v4
