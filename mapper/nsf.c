@@ -27,7 +27,6 @@
 static struct {
 	uint8_t *prgROM;
 	uint8_t *prgRAM;
-	uint8_t FillRAM[0x8000];
 	uint32_t prgROMsize;
 	uint32_t prgRAMsize;
 	uint32_t InitPRGBank[8];
@@ -37,16 +36,17 @@ static struct {
 	uint16_t loadAddr;
 	uint16_t initAddr;
 	uint16_t playAddr;
+	uint16_t mmc5_mulRes;
+	uint8_t FillRAM[0x8000];
 	uint8_t trackTotal;
 	uint8_t curTrack;
-	bool bankEnable;
-	bool playing;
-	bool init;
 	uint8_t init_timeout;
 	uint8_t MMC5ExRAM[0x400];
 	uint8_t mmc5_mul1, mmc5_mul2;
-	uint16_t mmc5_mulRes;
 	uint8_t prevValReads[8];
+	bool bankEnable;
+	bool playing;
+	bool init;
 } nsf;
 
 extern bool nesPAL;
