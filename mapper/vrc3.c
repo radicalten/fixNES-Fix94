@@ -16,12 +16,12 @@
 #include "../mapper_h/common.h"
 
 static struct {
-	bool usesPrgRAM;
 	uint16_t irqCtr;
 	uint16_t irqReloadCtr;
 	bool irqEnable;
 	bool irqEnable_after_ack;
 	bool irq8Bit;
+	bool usesPrgRAM;
 } vrc3;
 
 extern uint8_t interrupt;
