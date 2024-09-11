@@ -22,6 +22,10 @@ extern uint8_t audioExpansion;
 uint8_t fdsOut;
 
 static struct {
+	uint32_t curMasterClock;
+	uint32_t volEnvClock, sweepClock, curVolEnvClock, curSweepClock;
+	uint16_t freq, modFreq;
+	uint16_t curModClock;
 	uint8_t wave[0x40];
 	uint8_t modulation[0x20];
 	uint8_t curModPos;
@@ -32,10 +36,6 @@ static struct {
 	uint8_t masterVol;
 	uint8_t tickCnt;
 	int8_t modCounter;
-	uint16_t freq, modFreq;
-	uint32_t curMasterClock;
-	uint16_t curModClock;
-	uint32_t volEnvClock, sweepClock, curVolEnvClock, curSweepClock;
 	bool masterEnable;
 	bool volEnvEnabled;
 	bool envMasterEnable;
