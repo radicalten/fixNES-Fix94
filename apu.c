@@ -37,39 +37,6 @@
 #define DMC_IRQ_ENABLE (1<<7)
 
 static struct {
-	uint8_t reg[0x18];
-	uint32_t BufSize;
-	uint32_t BufSizeBytes;
-	uint32_t curBufPos;
-	uint32_t Frequency;
-	uint16_t freq1;
-	uint16_t freq2;
-	uint16_t triFreq;
-	uint16_t noiseFreq;
-	uint16_t noiseShiftReg;
-	uint16_t dmcFreq;
-	uint16_t dmcAddr, dmcLen;
-	uint16_t dmcCurAddr, dmcCurLen;
-	uint8_t p1LengthCtr, p2LengthCtr, noiseLengthCtr;
-	uint8_t triLengthCtr, triLinearCtr, triCurLinearCtr;
-	uint8_t dmcVol, dmcCurVol;
-	uint8_t dmcSampleRemain;
-	uint8_t dmcSampleBuf, dmcCpuBuf;
-	uint8_t irq;
-	bool mode5;
-	uint8_t modePos;
-	uint16_t modeCurCtr;
-	uint16_t p1freqCtr, p2freqCtr, triFreqCtr, noiseFreqCtr, dmcFreqCtr;
-	uint8_t p1Cycle, p2Cycle, triCycle;
-	bool p1haltloop, p2haltloop, trihaltloop, noisehaltloop, dmchaltloop;
-	bool dmcenabled;
-	bool dmcready;
-	bool dmcirqenable;
-	bool trireload;
-	bool noiseMode1;
-	bool enable_irq;
-	envelope_t p1Env, p2Env, noiseEnv;
-	sweep_t p1Sweep, p2Sweep;
 	#if AUDIO_FLOAT
 	float pulseLookupTbl[32];
 	float tndLookupTbl[204];
@@ -89,7 +56,6 @@ static struct {
 	int32_t lastLPOut;
 	int32_t *ampVol;
 	#endif
-
 	#if FAKE_STEREO
 	uint32_t DelaySize;
 	uint32_t DelaySizeBytes;
@@ -100,24 +66,54 @@ static struct {
 	int16_t *DelayBuf;
 	#endif
 	#endif
-
+	uint32_t BufSize;
+	uint32_t BufSizeBytes;
+	uint32_t curBufPos;
+	uint32_t Frequency;
+	uint16_t freq1;
+	uint16_t freq2;
+	uint16_t triFreq;
+	uint16_t noiseFreq;
+	uint16_t noiseShiftReg;
+	uint16_t dmcFreq;
+	uint16_t dmcAddr, dmcLen;
+	uint16_t dmcCurAddr, dmcCurLen;
+	uint16_t modeCurCtr;
+	uint16_t p1freqCtr, p2freqCtr, triFreqCtr, noiseFreqCtr, dmcFreqCtr;
 	const uint16_t *dmcPeriod, *noisePeriod;
 	const uint16_t *mode4Ctr, *mode5Ctr;
-	bool mode_change;
-	bool new_mode5;
+	uint8_t reg[0x18];
+	uint8_t p1LengthCtr, p2LengthCtr, noiseLengthCtr;
+	uint8_t triLengthCtr, triLinearCtr, triCurLinearCtr;
+	uint8_t dmcVol, dmcCurVol;
+	uint8_t dmcSampleRemain;
+	uint8_t dmcSampleBuf, dmcCpuBuf;
+	uint8_t irq;
 	uint8_t vrc7Clock;
 	uint8_t apuClock;
 	uint8_t p1Out;
 	uint8_t p2Out;
 	uint8_t triOut;
 	uint8_t noiseOut;
-
 	const uint8_t *p1seq;
 	const uint8_t *p2seq;
 	const uint8_t *lengthLookupTbl;
 	const uint8_t *triSeq;
-
+	uint8_t modePos;
+	uint8_t p1Cycle, p2Cycle, triCycle;
+	bool mode5;
+	bool p1haltloop, p2haltloop, trihaltloop, noisehaltloop, dmchaltloop;
+	bool dmcenabled;
+	bool dmcready;
+	bool dmcirqenable;
+	bool trireload;
+	bool noiseMode1;
+	bool enable_irq;
+	bool mode_change;
+	bool new_mode5;
 	bool waitForRefill;
+	envelope_t p1Env, p2Env, noiseEnv;
+	sweep_t p1Sweep, p2Sweep;
 } apu;
 
 #if AUDIO_FLOAT
