@@ -17,7 +17,6 @@ static struct {
 	uint8_t *prgROM;
 	uint8_t *prgROMBank0Ptr, *prgROMBank1Ptr,
 			*prgROMBank2Ptr, *prgROMBank3Ptr;
-	bool usesPrgRAM;
 	uint8_t *chrROM;
 	uint8_t *chrROMBank0Ptr;
 	uint8_t *chrROMBank1Ptr;
@@ -33,6 +32,7 @@ static struct {
 	uint32_t curCHRBank11;
 	bool CHRSelect0;
 	bool CHRSelect1;
+	bool usesPrgRAM;
 } mmc2_4;
 
 static void mmc2_4SetPrgROMBankPtr()
