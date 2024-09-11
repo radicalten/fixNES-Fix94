@@ -1,6 +1,6 @@
 include $(DEVKITPPC)/wii_rules
 
-CC      := gcc
+#CC      := gcc
 CFLAGS  := -g -O3 -flto -fuse-linker-plugin -Wall
 LDFLAGS := -O3 -flto -fuse-linker-plugin -lSDL2
 TARGET  := myapp
