@@ -4,10 +4,7 @@ include $(DEVKITPPC)/wii_rules
 CFLAGS  := -g -O3 -flto -fuse-linker-plugin -Wall
 LDFLAGS := -O3 -flto -fuse-linker-plugin -lSDL2
 TARGET  := myapp
-SRCS    += $(wildcard *.c)
-SRCS    += $(wildcard mapper/*.c)
-SRCS    += $(wildcard unzip/*.c)
-SRCS    += $(wildcard libretro/*.c)
+SRCS    += $(wildcard wii/*.c)
 OBJS    := $(patsubst %.c,%.o,$(SRCS))
 # Make requires <tab> to separate 
 all: $(OBJS)
