@@ -17,8 +17,8 @@
 
 static struct {
 	uint8_t *prgROM;
-	uint32_t prgROMand;
 	uint8_t *prgROMBank0Ptr, *prgROMBank1Ptr;
+	uint32_t prgROMand
 	uint16_t type;
 	uint8_t prgBank;
 	bool lock;
