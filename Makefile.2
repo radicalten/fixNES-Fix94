@@ -4,7 +4,7 @@ AUDIO_FLOAT = 1
 
 SRCS    += $(wildcard *.c)
 SRCS    += $(wildcard mapper/*.c)
-#SRCS    += $(wildcard unzip/*.c)
+SRCS    += $(wildcard unzip/*.c)
 OBJS    := $(patsubst %.c,%.o,$(SRCS))
 
 FLAGS    += -Wall -Wextra -ffast-math
