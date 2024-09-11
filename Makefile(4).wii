@@ -1,0 +1,21 @@
+include $(DEVKITPPC)/wii_rules
+
+CC      := gcc
+CFLAGS  := -g -O3 -flto -fuse-linker-plugin -Wall
+LDFLAGS := -O3 -flto -fuse-linker-plugin -lSDL2
+TARGET  := myapp
+SRCS    += $(wildcard *.c)
+SRCS    += $(wildcard libretro/*.c)
+OBJS    := $(patsubst %.c,%.o,$(SRCS))
+# Make requires <tab> to separate 
+all: $(OBJS)
+	$(CC) $(OBJS) $(CFLAGS) $(LDFLAGS) -o $(TARGET)
+
+#TARGET := $(TARGET_NAME)_libretro_$(platform).a
+#CC = $(DEVKITPPC)/bin/powerpc-eabi-gcc$(EXE_EXT)
+#CXX = $(DEVKITPPC)/bin/powerpc-eabi-g++$(EXE_EXT)
+#AR = $(DEVKITPPC)/bin/powerpc-eabi-gcc-ar$(EXE_EXT)
+#PLATFORM_DEFINES += -DGEKKO -DHW_RVL -mrvl -mcpu=750 -meabi -mhard-float
+#PLATFORM_DEFINES += -U__INT32_TYPE__ -U __UINT32_TYPE__ -D__INT32_TYPE__=int
+#STATIC_LINKING = 1
+#DO_LTO = 1
