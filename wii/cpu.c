@@ -14,7 +14,7 @@
 #include "ppu.h"
 #include "apu.h"
 #include "cpu.h"
-#include "mapper_h/nsf.h"
+#include "nsf.h"
 
 #define P_FLAG_CARRY (1<<0)
 #define P_FLAG_ZERO (1<<1)
