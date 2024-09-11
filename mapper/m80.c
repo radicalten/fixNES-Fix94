@@ -15,9 +15,9 @@
 #include "../mapper_h/common.h"
 
 static struct {
+	uint8_t *prgRAM;
 	bool usesPrgRAM;
 	bool prgRAMenabled;
-	uint8_t *prgRAM;
 } m80;
 
 void m80init(uint8_t *prgROMin, uint32_t prgROMsizeIn, 
